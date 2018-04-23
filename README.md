@@ -1,45 +1,44 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Raspberry Pi Camera
+IoT Raspberry Pi security camera running open-cv for object detection. If the camera detects an object it will send created picture to GoogleCloud and a notification to Android device through FirebaseCloudMessaging. It also runs a server that provides a live video stream over the internet.
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+![Scheme](images/system_architecture.jpg)
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
 
----
 
-## Edit a file
+## Workflow
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+After RaspberryPi successfully detects an image, it sends that image to GoogleCloudStorage and sends notification to all Android devices listed through FirebaseCloudMessaging. The notification contains information about picture name. After tapping on the notification the app opens with a view that enables to download the photo from GoogleCloudStorage.
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
 
----
+## GoogleCloudStorage
 
-## Create a file
+There needs to be a bucket created inside GoogleCloudStorage. Since it requires debit card information, this functionality is turned off at the moment.
 
-Next, you’ll add a new file to this repository.
+After creating a bucket we have to provide its name inside MainActivity.class:
+```
+public static final String BUCKET_NAME = "<bucket_name>";
+```
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
+This will allow to download pictures from that bucket after receiving a notification from FirebaseCloudMessaging.
+Apart from that, GoogleCloud project name in which bucket is created needs to be provided in BucketApi class:
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+```
+storage = StorageOptions.newBuilder()
+                .setProjectId("<project_name>")
+                .setCredentials(ServiceAccountCredentials.fromStream(inputStream))
+                .build()
+                .getService();
+```
 
----
+##FirebaseCloudMessaging
 
-## Clone a repository
+In order to send notification to Android client it is necessary to save registration id for each client on RaspberryPi device.
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+These registration ids are obtained from the FirebaseCloudMessaging service when the app starts for the first time. Registration tokens may change when:
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+ 1. The app deletes instance id 
+ 2. The app is restored on a new device 
+ 3. The user uninstalls/reinstalls the app 
+ 4. The user clears app data
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+Ideally Android client should send its registration id to the server each time it is restored but this functionality is not implemented. Registration ids need to be provide manually for each app. Registration id will be displayed in app's logs when the app is installed for the first time.
