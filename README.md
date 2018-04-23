@@ -1,7 +1,10 @@
 # Raspberry Pi Camera
 IoT Raspberry Pi security camera running open-cv for object detection. If the camera detects an object it will send created picture to GoogleCloud and a notification to Android device through FirebaseCloudMessaging. It also runs a server that provides a live video stream over the internet.
 
-<img align="center" src="images/system_architecture.jpg" alt="System architecture">
+<p align="center">
+  <img src="images/system_architecture.jpg" alt="System architecture"/>
+</p>
+
 
 
 ## Workflow
