@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "964803366148",
+    "firebase_url": "https://raspi-261ac.firebaseio.com",
+    "project_id": "raspi-261ac",
+    "storage_bucket": "raspi-261ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964803366148:android:e7b3b1b2d9d4d15d",
+        "android_client_info": {
+          "package_name": "com.example.root.notificationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964803366148-ejbv4j57aoktk988c8tg0s8ujjqgo642.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.root.notificationapp",
+            "certificate_hash": "c3728e1bdbbc1d12d357b935275c4600119517c8"
+          }
+        },
+        {
+          "client_id": "964803366148-udrjdup3j2odkpq65a2qv8andc28qql6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHEgcf8FY4Ww0_u09nkn555DDbahunV-8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964803366148-udrjdup3j2odkpq65a2qv8andc28qql6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964803366148:android:3a23e683e44a330b",
+        "android_client_info": {
+          "package_name": "com.example.asinit_user.raspiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964803366148-mhbpmk2pbbjdg4o7okt2kluiavtkgms7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asinit_user.raspiapp",
+            "certificate_hash": "925af4932437788155c2da5e8ad21aa3e0901d31"
+          }
+        },
+        {
+          "client_id": "964803366148-vguf39q6u6gbh5qdmor6erofsj3ktnrr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asinit_user.raspiapp",
+            "certificate_hash": "c3728e1bdbbc1d12d357b935275c4600119517c8"
+          }
+        },
+        {
+          "client_id": "964803366148-udrjdup3j2odkpq65a2qv8andc28qql6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHEgcf8FY4Ww0_u09nkn555DDbahunV-8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964803366148-udrjdup3j2odkpq65a2qv8andc28qql6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
