@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.asinit_user.raspiapp">
+    package="pl.tolichwer.raspiapp">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -10,9 +10,9 @@
         android:label="ALARM"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".App"
+        android:name="pl.tolichwer.raspiapp.App"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="pl.tolichwer.raspiapp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,14 +21,14 @@
         </activity>
 
         <service
-            android:name=".FirebaseInstance">
+            android:name="pl.tolichwer.raspiapp.FirebaseInstance">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>
 
         <service
-            android:name=".FirebaseMessaging">
+            android:name="pl.tolichwer.raspiapp.FirebaseMessaging">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>

@@ -1,4 +1,4 @@
-package com.example.asinit_user.raspiapp;
+package pl.tolichwer.raspiapp;
 
 import android.util.Log;
 

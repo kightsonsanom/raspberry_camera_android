@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">raspiapp</string>
+    <string name="show_photo">Pokaż aktualne zdjęcie</string>
+    <string name="no_photos">Brak zdjęć</string>
 </resources>

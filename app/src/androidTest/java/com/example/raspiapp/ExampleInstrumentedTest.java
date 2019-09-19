@@ -1,4 +1,4 @@
-package com.example.asinit_user.raspiapp;
+package pl.tolichwer.raspiapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.asinit_user.raspiapp", appContext.getPackageName());
+        assertEquals("pl.tolichwer.raspiapp", appContext.getPackageName());
     }
 }

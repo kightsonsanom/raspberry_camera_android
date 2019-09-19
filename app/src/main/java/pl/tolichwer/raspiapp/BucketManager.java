@@ -1,4 +1,4 @@
-package com.example.asinit_user.raspiapp;
+package pl.tolichwer.raspiapp;
 
 import android.graphics.Bitmap;
 import android.util.Log;
@@ -8,12 +8,9 @@ import com.google.cloud.storage.Bucket;
 import java.util.List;
 
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-
-import static com.example.asinit_user.raspiapp.MainActivity.BUCKET_NAME;
 
 public class BucketManager {
 
@@ -40,7 +37,7 @@ public class BucketManager {
     }
 
     public void getBucket() {
-        bucketApi.getBucketObsevable(BUCKET_NAME).subscribeOn(Schedulers.newThread())
+        bucketApi.getBucketObsevable(MainActivity.BUCKET_NAME).subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Bucket>() {
                     @Override

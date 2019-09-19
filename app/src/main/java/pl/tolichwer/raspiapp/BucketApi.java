@@ -1,4 +1,4 @@
-package com.example.asinit_user.raspiapp;
+package pl.tolichwer.raspiapp;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,12 +16,12 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
-public class BucketApi {
+class BucketApi {
 
     private Storage storage;
 
-    public BucketApi(Context context) {
-        InputStream inputStream = null;
+    BucketApi(Context context) {
+        InputStream inputStream;
         try {
             inputStream = context.getResources().getAssets().open("credentials.json", Context.MODE_WORLD_READABLE);
         storage = StorageOptions.newBuilder()

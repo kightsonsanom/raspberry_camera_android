@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Projekty\systemywbudowaneapp\raspiapp.iml" filepath="D:\Projekty\systemywbudowaneapp\raspiapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/systemywbudowaneapp.iml" filepath="$PROJECT_DIR$/.idea/systemywbudowaneapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/raspberrycameraandroid.iml" filepath="$PROJECT_DIR$/raspberrycameraandroid.iml" />
     </modules>
   </component>
 </project>

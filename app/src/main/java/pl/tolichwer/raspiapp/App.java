@@ -1,4 +1,4 @@
-package com.example.asinit_user.raspiapp;
+package pl.tolichwer.raspiapp;
 
 import android.app.Application;
 import android.preference.PreferenceManager;
