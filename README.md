@@ -30,7 +30,7 @@ storage = StorageOptions.newBuilder()
                 .getService();
 ```
 
-##FirebaseCloudMessaging
+## FirebaseCloudMessaging
 
 In order to send notification to Android client it is necessary to save registration id for each client on RaspberryPi device.
 
